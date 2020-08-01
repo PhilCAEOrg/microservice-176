@@ -71,9 +71,9 @@ public class Resource extends RESTService {
 
   @Api
   @SwaggerDefinition(
-      info = @Info(title = "176", version = "$Metadata_Version$",
-          description = "$Metadata_Description$",
-          termsOfService = "$Metadata_Terms$",
+      info = @Info(title = "176", version = "",
+          description = "",
+          termsOfService = "",
           contact = @Contact(name = "", email = "CAEAddress@gmail.com") ,
           license = @License(name = "BSD",
               url = "https://github.com/PhilCAEOrg/microservice-176/blob/master/LICENSE.txt") ) )
@@ -87,12 +87,12 @@ public class Resource extends RESTService {
    * getTodos
    *
    * 
-   *
+   * @param payload  a JSONObject
    * 
    * @return Response 
    * 
    */
-  @GET
+  @POST
   @Path("/todo")
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.TEXT_PLAIN)
@@ -100,7 +100,8 @@ public class Resource extends RESTService {
        @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "resp")
   })
   @ApiOperation(value = "getTodos", notes = " ")
-  public Response getTodos() {
+  public Response getTodos(String payload) {
+    JSONObject payload_JSON = (JSONObject) JSONValue.parse(payload);
 
 
 
