@@ -87,7 +87,7 @@ public class Resource extends RESTService {
    * getTodos
    *
    * 
-   * @param payload  a JSONObject
+
    * 
    * @return Response 
    * 
@@ -100,8 +100,7 @@ public class Resource extends RESTService {
        @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "resp")
   })
   @ApiOperation(value = "getTodos", notes = " ")
-  public Response getTodos(String payload) {
-    JSONObject payload_JSON = (JSONObject) JSONValue.parse(payload);
+  public Response getTodos() {
 
 
 

@@ -100,10 +100,10 @@ public class ResourceTest {
     MiniClient c = new MiniClient();
     c.setAddressPort(HTTP_ADDRESS, HTTP_PORT);
     try {
-      JSONObject payload = new JSONObject();
+
       c.setLogin(testAgent.getIdentifier(), testPass);
-      ClientResponse result = c.sendRequest("POST", mainPath + "/todo", payload.toJSONString(),
-        MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON, new HashMap<String,String>());
+      ClientResponse result = c.sendRequest("POST", mainPath + "/todo", "",
+        MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON, new HashMap<String,String>());
       assertTrue(true); // change here
       System.out.println("Result of 'testgetTodos': " + result.getResponse().trim());
     } catch (Exception e) {
